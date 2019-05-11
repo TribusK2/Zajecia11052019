@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ankieta oceniająca zajęcia 
+    </ion-title>
+  </ion-toolbar>
+  <ion-img src="assets/logo_gdansk.png" style="height: 100px; padding: 20px 0; background-color: white;"></ion-img>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-slides pager="false" #slider (ionSlideWillChange)="checkSurveyCode()">
+      <ion-slide>
+        <ion-grid>
+      <ion-row align-items-end>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating">Kod ankiety</ion-label>
+            <ion-input [(ngModel)]="surveyCode" type="number" min="100000" max="999999" step="1"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="tertiary" shape="round" size="default">
+          <ion-icon name="search"></ion-icon>
+          Sprawdź
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-list>
+          <ion-item>
+            <ion-label position="stacked" style="font-weight: bold;">Uczelnia:</ion-label>
+            <ion-label>{{survey.School}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Kierunek:</ion-label>
+            <ion-label>{{survey.Secjalization}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" style="font-weight: bold;">Semestr:</ion-label>
+            <ion-label>{{survey.Semestr}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Przedmiot:</ion-label>
+            <ion-label>{{survey.Lecturer}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" style="font-weight: bold;">Rodzaj zajęć:</ion-label>
+            <ion-label>{{survey.Course}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Grupa:</ion-label>
+            <ion-label>{{survey.Group}}</ion-label>
+          </ion-item>
+        </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      </ion-slide>
+      <ion-slide>
+        <ion-list>
+          <ion-list-header>
+            Ankieta
+          </ion-list-header>
+          <ion-item>
+            <ion-label style="font-weight: bold;">Wymagania przedstawione w sposób jasny</ion-label>
+            <ion-select value="brown" okText="Zatwierdź" cancelText="Anuluj">
+              <ion-select-option value="5">5 - Ocena bardzo dobra</ion-select-option>
+              <ion-select-option value="4">4 - Ocena dobra</ion-select-option>
+              <ion-select-option value="3">3 - Ocena dostateczna</ion-select-option>
+              <ion-select-option value="2">2 - Ocena niedostateczna</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Udostępnia materiały</ion-label>
+            <ion-select value="brown" okText="Zatwierdź" cancelText="Anuluj">
+              <ion-select-option value="5">5 - Ocena bardzo dobra</ion-select-option>
+              <ion-select-option value="4">4 - Ocena dobra</ion-select-option>
+              <ion-select-option value="3">3 - Ocena dostateczna</ion-select-option>
+              <ion-select-option value="2">2 - Ocena niedostateczna</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label style="font-weight: bold;">Prowadzi zajęcia w sposób interesujący</ion-label>
+            <ion-select value="brown" okText="Zatwierdź" cancelText="Anuluj">
+              <ion-select-option value="5">5 - Ocena bardzo dobra</ion-select-option>
+              <ion-select-option value="4">4 - Ocena dobra</ion-select-option>
+              <ion-select-option value="3">3 - Ocena dostateczna</ion-select-option>
+              <ion-select-option value="2">2 - Ocena niedostateczna</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Dokonuje syntezy materiału</ion-label>
+            <ion-select value="brown" okText="Zatwierdź" cancelText="Anuluj">
+              <ion-select-option value="5">5 - Ocena bardzo dobra</ion-select-option>
+              <ion-select-option value="4">4 - Ocena dobra</ion-select-option>
+              <ion-select-option value="3">3 - Ocena dostateczna</ion-select-option>
+              <ion-select-option value="2">2 - Ocena niedostateczna</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-button expand="full" fill="solid" color="tertiary">
+            <ion-icon name="mail" style="padding: 3px;" color="light"></ion-icon>
+            Wyślij
+          </ion-button>
+        </ion-list>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>
